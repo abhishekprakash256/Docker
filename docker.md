@@ -36,6 +36,7 @@
   docker ps -a (to show all the previous running container)
   docker run image_name:version (pull the image and start the conatainer)
   docker run -p6000:6379 image_name (the port binding for the image)
+  docker run -v/path:/path (create a host and the virtual file system)
   ```
 
 - Debugging Commands
@@ -60,6 +61,14 @@
   docker-compose -f file_name up  (to compose a file and run it with up command)
   ```
 
+- Docker build 
+
+  ```sh
+  docker build -t image_name:tag_name Dockerfile  (to build a image with docker file)
+  ```
+
+  
+
 ### Docker File 
 
 - The docker file is the config file for the container 
@@ -79,7 +88,6 @@
   - both can be use to make a container
   - Docker compose is a recipe 
   - Docker file can be tedious work if multiple container are used
-  - 
 
 ### Notes 
 
@@ -149,5 +157,6 @@
 https://www.youtube.com/watch?v=3c-iBn73dDE&t=2873s
 hub.docker.com
 https://docs.docker.com/compose/compose-file/compose-file-v3/  (docker compose files)
+https://www.youtube.com/watch?v=-LeV_c1zG-s
 ```
 
