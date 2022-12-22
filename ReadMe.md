@@ -94,6 +94,15 @@
 - Multiple container can run on same machine
 - A machine has certain number of ports
 - conflict when same port on host machine
+- The addition of the docker group to the allow the user to run the docker command without the sudo user privilages
+    
+    ```
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    newgrp docker
+    docker run hello-world
+
+    ```
 - Docker network
   - creates a isolated docker network where container resides
 
@@ -158,5 +167,6 @@ https://www.youtube.com/watch?v=3c-iBn73dDE&t=2873s
 hub.docker.com
 https://docs.docker.com/compose/compose-file/compose-file-v3/  (docker compose files)
 https://www.youtube.com/watch?v=-LeV_c1zG-s
+https://docs.docker.com/engine/install/linux-postinstall/
 ```
 
