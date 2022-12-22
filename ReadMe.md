@@ -72,10 +72,24 @@
 ### Docker File 
 
 - The docker file is the config file for the container 
-
+- The file can be understand by the docker 
+- The file has the instructions and the arguments formant 
+- The docker file starts from From instruction
 - RUN command can be use to run any Linux command 
-
 - A docker file has to called always Dockerfile
+- Example docker file
+
+  ```
+  FROM Ubuntu
+  RUN apt-get update
+  RUN apt-get install python
+  RUN pip install flask
+  RUN pip install flask-mysql 
+  COPY . /opt/source-code
+
+  ENVIROMENT FLASK_APP =/opt/source-code/app.py flask.run 
+
+  ```
 
   ```yaml
   RUN mkdir -p /home/app   (can have multiple run commands)
