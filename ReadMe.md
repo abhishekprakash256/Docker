@@ -37,6 +37,7 @@
   docker run image_name:version (pull the image and start the conatainer)
   docker run -p6000:6379 image_name (the port binding for the image)
   docker run -v/path:/path (create a host and the virtual file system)
+  docker run Ubuntu --network=host
   ```
 
 - Debugging Commands
@@ -109,6 +110,9 @@
 - A machine has certain number of ports
 - conflict when same port on host machine
 - The addition of the docker group to the allow the user to run the docker command without the sudo user privilages
+- The Docker container entry point
+  - Entry pooint the command that run when the container start
+  - The entry point run the command 
     
     ```
     sudo groupadd docker
@@ -118,7 +122,22 @@
 
     ```
 - Docker network
-  - creates a isolated docker network where container resides
+  - Creates a isolated docker network where container resides
+  - The three network are created at the start bridge,host,none
+  - The bridge is a private network created by the network , the container get the network address ip 
+  - To access from the outside map the host from the outside
+  - The docker none network the host are not attached to any network 
+  - In the host network same network but the port are different 
+  - Command to create a network 
+
+  ```
+  docker network create \
+   --driver bridge \
+   --subnet 182.18.0.0/16 
+   custom-isolated-network
+
+
+  ```
 
 - Docker compose
 
