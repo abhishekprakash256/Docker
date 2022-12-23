@@ -42,7 +42,7 @@
   docker compose - build  (to make the containers)
   docker run --cpus=.5 ubuntu (to use the cpu for running the container)
   docker service create --replicate=100 nodejs
-  
+
   ```
 
 - Debugging Commands
@@ -245,9 +245,13 @@
 
 ```
 https://www.youtube.com/watch?v=3c-iBn73dDE&t=2873s
+
 hub.docker.com
+
 https://docs.docker.com/compose/compose-file/compose-file-v3/  (docker compose files)
+
 https://www.youtube.com/watch?v=-LeV_c1zG-s
+
 https://docs.docker.com/engine/install/linux-postinstall/
 ```
 
