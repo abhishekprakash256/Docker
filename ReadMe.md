@@ -38,6 +38,11 @@
   docker run -p6000:6379 image_name (the port binding for the image)
   docker run -v/path:/path (create a host and the virtual file system)
   docker run Ubuntu --network=host
+  docker volume create data_volume
+  docker compose - build  (to make the containers)
+  docker run --cpus=.5 ubuntu (to use the cpu for running the container)
+  docker service create --replicate=100 nodejs
+  
   ```
 
 - Debugging Commands
@@ -106,6 +111,15 @@
 
 ### Notes 
 
+- The layered architecture are as follows for an example image : - 
+  - base image layer
+  - changes in the apt packages
+  - changes in the pip packages
+  - source code
+  - update entry point
+- The layer 6 is created as the docker start the container and destroyed as the container are started
+- The 5 layers are read only and the 6 layers os the read and write layer
+- The docker should login before pull or push from the private registory
 - Multiple container can run on same machine
 - A machine has certain number of ports
 - conflict when same port on host machine
@@ -136,16 +150,50 @@
    --subnet 182.18.0.0/16 
    custom-isolated-network
 
+- Docker storage 
+ - Two types of mounting volume mounting and the bind mounting
+ - Docker uses the storage driver to mounting 
+ - docker mounting can be also used 
+   
+   ```
+    The file system are as follows - 
+    /var/lib/docker
+      aufs
+      containers
+      image
+      volumes  (the mounted volumes comes under this)
+
+
+   ``` 
+  - The docker engine 
+    - Docker cli, rest api, docker deamon
+    -  
 
   ```
 
 - Docker compose
 
-  - it is a file that contain all the commands that are used one by one 
+  - It is a file that contain all the commands that are used one by one
+  - To make the container up and runnig
+  - The docker compose file has the recipie to make all the needed containers up and running with network commands
+  - The --link is used to link the container with the other container 
+  - It has a certain file structure
+  - The indentation has to be correct
+  - The docker compose file has all the images and the volume, ports, in the yml format 
+  - The file is named as the docker-compose.yml 
+  - The image can have the link to the directory for the image file as well instead of image use the build: ./dir
+  - Version specification is important in the file
+  - The docker compose can also have the network specifications
+  - The image registry 
+    - used as follows 
+    
+    ```
+    image: docker.io/nginx/nginx 
+           {registry} user account image/repository
 
-  - it has a certain file structure
 
-  - the indentation has to be correct
+    ```
+
 
     ```yaml
     version: '3'
