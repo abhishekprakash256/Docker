@@ -42,7 +42,8 @@
   docker compose - build  (to make the containers)
   docker run --cpus=.5 ubuntu (to use the cpu for running the container)
   docker service create --replicate=100 nodejs
-
+  docker kill <contaner name>  (docker contaniner kill name)
+  docker tag <image_name>:tag <the_repo>:tag   (very imp)
   ```
 
 - Debugging Commands
@@ -123,6 +124,7 @@
 - Multiple container can run on same machine
 - A machine has certain number of ports
 - conflict when same port on host machine
+- The tagging of the docker images is very important otherwise the pushing is denied
 - The addition of the docker group to the allow the user to run the docker command without the sudo user privilages
 - The Docker container entry point
   - Entry pooint the command that run when the container start
