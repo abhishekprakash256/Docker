@@ -44,6 +44,10 @@
   docker service create --replicate=100 nodejs
   docker kill <contaner name>  (docker contaniner kill name)
   docker tag <image_name>:tag <the_repo>:tag   (very imp)
+  docker system prune     (docker kill all container and remove images)
+  docker images -f dangling=true   (to list dangling images)
+  docker images -f dangling=true    (to remove dangling images)
+  
   ```
 
 - Debugging Commands
@@ -255,4 +259,7 @@ https://docs.docker.com/compose/compose-file/compose-file-v3/  (docker compose f
 https://www.youtube.com/watch?v=-LeV_c1zG-s
 
 https://docs.docker.com/engine/install/linux-postinstall/
+
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
 ```
